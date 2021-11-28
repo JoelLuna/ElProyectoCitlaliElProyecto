@@ -3,6 +3,7 @@ import mongoose from 'mongoose';
 import bodyParser from 'body-parser'
 import cors from 'cors'
 import userRoutes from './routes/usuario';
+import ordenRoutes from './routes/Orden';
 
 const server = new Server()
 
@@ -17,10 +18,13 @@ server.app.use(bodyParser.json());
 
 //Rutas de la ap
 server.app.use('/user', userRoutes);
+server.app.use('/orden',ordenRoutes);
+
 
 //Conectando DB
 mongoose.connect('mongodb://localhost:27017/pruebaBD',
                 {useNewUrlParser: true, useUnifiedTopology: true},(err)=>{
+                    
                     if(err){
                         throw err;
                     }

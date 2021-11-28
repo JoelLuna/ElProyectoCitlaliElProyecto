@@ -17,7 +17,7 @@ const usuarioMD_1 = require("../models/usuarioMD");
 const bcrypt_1 = __importDefault(require("bcrypt"));
 const token_1 = __importDefault(require("../classes/token"));
 const authentication_1 = require("../middlewares/authentication");
-const userRoutes = express_1.Router();
+const userRoutes = (0, express_1.Router)();
 userRoutes.post('/create', (req, res) => {
     const user = {
         nombre: req.body.nombre,
