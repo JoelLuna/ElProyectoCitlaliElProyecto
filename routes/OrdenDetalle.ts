@@ -37,5 +37,5 @@ ordenDetalleRoutes.post('/addOrdenDetalle', (req: any,res: Response)=>{
     
 })
 
-export default ordenDetalleRoutes9
+export default ordenDetalleRoutes
 

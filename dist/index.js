@@ -11,7 +11,7 @@ const usuario_1 = __importDefault(require("./routes/usuario"));
 const Orden_1 = __importDefault(require("./routes/Orden"));
 const server = new server_1.default();
 //Configurar CORS
-server.app.use((0, cors_1.default)({ origin: true, credentials: true }));
+server.app.use(cors_1.default({ origin: true, credentials: true }));
 //Body Parser
 server.app.use(body_parser_1.default.urlencoded({ extended: true }));
 server.app.use(body_parser_1.default.json());

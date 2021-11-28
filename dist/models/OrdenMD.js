@@ -7,4 +7,4 @@ const ordenSchema = new mongoose_1.Schema({
     /*ordenDetalles: [{type: Schema.Types.ObjectId, ref: 'OrdenDetalle'}],*/
     total: { type: Number }
 });
-exports.Orden = (0, mongoose_1.model)('Orden', ordenSchema);
+exports.Orden = mongoose_1.model('Orden', ordenSchema);
