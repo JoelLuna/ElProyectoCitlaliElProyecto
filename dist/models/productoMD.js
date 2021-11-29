@@ -7,4 +7,4 @@ const productoSchema = new mongoose_1.Schema({
     precio: { type: Number },
     categoria: { type: String }
 });
-exports.Producto = mongoose_1.model('Producto', productoSchema);
+exports.Producto = (0, mongoose_1.model)('Producto', productoSchema);

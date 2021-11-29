@@ -11,7 +11,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
 const OrdenMD_1 = require("../models/OrdenMD");
-const ordenRoutes = express_1.Router();
+const ordenRoutes = (0, express_1.Router)();
 ordenRoutes.get('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     let pagina = Number(req.query.pagina) || 1;
     let skip = pagina - 1;
@@ -38,7 +38,7 @@ ordenRoutes.post('/updateOrden', (req, res) => __awaiter(void 0, void 0, void 0,
     const orden = {
         ordenDetalles: req.body.ordenDetalles || req.orden.ordenDetalles
     };
-    OrdenMD_1.Orden.findByIdAndUpdate(req.orden._id, orden, { new: true }, (err, ordenDB) => {
+    yield OrdenMD_1.Orden.findByIdAndUpdate(req.orden._id, orden, { new: true }, (err, ordenDB) => {
         if (err) {
             throw err;
         }

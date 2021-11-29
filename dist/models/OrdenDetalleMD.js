@@ -8,4 +8,4 @@ const ordenDetalleSchema = new mongoose_1.Schema({
     cantidad: { type: Number },
     total: { type: Number }
 });
-exports.OrdenDetalles = mongoose_1.model('OrdenDetalle', ordenDetalleSchema);
+exports.OrdenDetalles = (0, mongoose_1.model)('OrdenDetalle', ordenDetalleSchema);

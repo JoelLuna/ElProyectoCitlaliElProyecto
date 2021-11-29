@@ -10,7 +10,7 @@ const ordenDetalleSchema = new Schema({
 interface IOrdenDetalle extends Document{
    orden: String,
    producto: String,
-   cantidad: String,
+   cantidad: Number,
    total: Number
 }
 

@@ -11,7 +11,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
 const OrdenDetalleMD_1 = require("../models/OrdenDetalleMD");
-const ordenDetalleRoutes = express_1.Router();
+const ordenDetalleRoutes = (0, express_1.Router)();
 ordenDetalleRoutes.get('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     let pagina = Number(req.query.pagina) || 1;
     let skip = pagina - 1;
@@ -25,6 +25,8 @@ ordenDetalleRoutes.get('/', (req, res) => __awaiter(void 0, void 0, void 0, func
 }));
 ordenDetalleRoutes.post('/addOrdenDetalle', (req, res) => {
     const body = req.body;
+    body.orden = req.orden._id;
+    body.producto = req.producto._id;
     OrdenDetalleMD_1.OrdenDetalles.create(body).then((ordenDetalleDB) => __awaiter(void 0, void 0, void 0, function* () {
         res.json({
             ok: true,

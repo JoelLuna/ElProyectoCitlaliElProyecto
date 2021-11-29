@@ -35,13 +35,12 @@ ordenRoutes.post('/addOrden', (req: any,res: Response)=>{
    
 })
 
-
 ordenRoutes.post('/updateOrden', async(req:any,res: Response)=>{
     const orden={
         ordenDetalles: req.body.ordenDetalles || req.orden.ordenDetalles
     }
 
-    Orden.findByIdAndUpdate(req.orden._id, orden,{new: true},(err,ordenDB)=>{
+    await Orden.findByIdAndUpdate(req.orden._id, orden,{new: true},(err,ordenDB)=>{
         if(err){
             throw err;
         }

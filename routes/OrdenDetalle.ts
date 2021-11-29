@@ -21,6 +21,9 @@ ordenDetalleRoutes.get('/',async (req: any,res: Response)=>{
 
 ordenDetalleRoutes.post('/addOrdenDetalle', (req: any,res: Response)=>{
     const body= req.body
+    body.orden = req.orden._id
+    body.producto = req.producto._id
+
      OrdenDetalles.create(body).then(async ordenDetalleDB =>{
          res.json({
              ok:true,
