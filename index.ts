@@ -4,7 +4,7 @@ import bodyParser from 'body-parser'
 import cors from 'cors'
 import userRoutes from './routes/usuario';
 import ordenRoutes from './routes/Orden';
-import ordenDetalleRoutes from './routes/OrdenDetalle';
+
 
 const server = new Server()
 
@@ -20,7 +20,7 @@ server.app.use(bodyParser.json());
 //Rutas de la ap
 server.app.use('/user', userRoutes);
 server.app.use('/orden',ordenRoutes);
-server.app.use('/ordenDetalle', ordenDetalleRoutes);
+
 
 
 //Conectando DB
